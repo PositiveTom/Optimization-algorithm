@@ -1,5 +1,8 @@
 #include<iostream>
 #include "GSM.h"
+#include<cmath>
+#include "Incremental_heuristic.h"
+
 
 using namespace std;
 
@@ -13,6 +16,14 @@ int main(int argc, char* argv)
 	Person.Target_Fun = Target_Fun;
 	Inter_type* Intervals = new Inter_type;
 	Intervals = Person.Execute();
+
+	double x0 = 0;
+	double h = 1;
+	IH dog(x0, h, Target_Fun);
+
+	dog.Excute();
+
+	system("pause");
 	return 0;
 }
 
